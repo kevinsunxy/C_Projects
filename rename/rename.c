@@ -4,6 +4,20 @@
 
 #define TEMP "fileNameList.tmp"
 
+/*******************************************************
+    Author: Kevin Sun
+    Date: 2018 Feb 7th
+    Compilation: $ gcc rename.c -o rename.out
+    Execution: $ ./rename.out
+
+    Description:
+    For every file and directory in the current location,
+    replace the every space in the file name by "_".
+
+    Note: This program is for Unix and Linux OS.
+******************************************************/
+
+
 int main(int argc, char* argv[]) {
     // create temp file that contains
     // the names of the files in the folder.
