@@ -1,4 +1,4 @@
-/***************************************************************
+/*******************************************************************************************************************
     Compilation: $ gcc headerGenerator.c -o headerGenerator.out
     Execution:   $ ./headerGenerator.out file.c
     Description: This program generates a header file named file.h which contains
@@ -21,7 +21,7 @@
     Since:       2018 Feb 20  
     Version:     v0.1
     Author:      Kevin Sun
-***************************************************************/
+*******************************************************************************************************************/
 
 #include <stdio.h>
 #include <string.h>
