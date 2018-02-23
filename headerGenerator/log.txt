@@ -1,0 +1,12 @@
+Log:
+
+v0.2
+    -Date: 2018 Jan 22
+    -Changes:
+        -Made a few changes in the comments
+        -Improved some codes
+
+V0.1:
+    -Date: 2018 Jan 22
+    -Changes:
+        -Finished the v0.1, tested and uploaded to GitHub

@@ -5,8 +5,8 @@
                  the declarations of all the functions defined 
                  (functions with a body) in the input .c file.
 
-                 The program supports the most commonly used code
-                 styles: 
+                 The program supports the most commonly used code styles:
+
                  1.
                     void fn(int a, int b) {
                     }
@@ -18,8 +18,12 @@
                  The header file will look like:
                     void fn(int a, int b);     
     
+    Notes:       This program is tested only on macOS Sierra. 
+                 The maximum length of the name of the .c file is 256.
+                 The maximum length of a line of code of the .c file is 1024.
+
     Since:       2018 Feb 20  
-    Version:     v0.1
+    Version:     v0.2
     Author:      Kevin Sun
 *******************************************************************************************************************/
 
@@ -54,16 +58,18 @@ int main(int argc, char* argv[]) {
     unsigned int stack = 0;
 
     FILE* code = fopen(cFileName,"r");
-    if(code == NULL) {
-        return -1;
-    }
-
     FILE* linePtr = fopen(cFileName,"r");
-    if(linePtr == NULL) {
+
+    if(code == NULL || linePtr == NULL) {
+        printf("Error: Cannot open file: %s\n", cFileName);
         return -1;
     }
 
     FILE* header = fopen(hFileName,"w");
+    if(header == NULL) {
+        printf("Error: Cannot create header file.\n");
+        return -1;
+    }
 
     char line[maxLineLen];
     char prevLine[maxLineLen];
@@ -101,11 +107,6 @@ int main(int argc, char* argv[]) {
             strcpy(prevLine, line);
             fgets(line, maxLineLen, linePtr);   
         }
-    }
-
-    if(stack != 0) {
-        printf("stack not empty.\n");
-        return -1;
     }
 
     fclose(linePtr);
